@@ -129,7 +129,7 @@
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form id="frm" name="frm" enctype="multipart/form-data" action="FoodUpload" method="post"> <!-- enctype="multipart/form-data" onsubmit="copyImage(event)" -->
+			<form id="frm" name="frm" enctype="multipart/form-data" action="FoodUpload" method="post" onsubmit="copyImage(event)"> <!-- enctype="multipart/form-data" onsubmit="copyImage(event)" -->
 				<div class="modal-header">
 					<h4 class="modal-title">메뉴 추가</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -152,10 +152,10 @@
 						<textarea class="form-control" id="mContent" name="mContent"></textarea>
 					</div>
   				    <div class="form-group">
-						<label>Image</label>
-						<input class="form-control" type="file" name="mImage" id="mImage">
-						<!-- <input type="hidden" > -->
-					</div>
+							<label>Image</label>
+							<input class="form-control" type="file" name="file" >
+							<input type="hidden" name="mImage" id="mImage">
+						</div>
 				</div>
 					<div class="modal-footer">
 						<input type="reset" class="btn btn-default" data-dismiss="modal" value="취소">
@@ -234,10 +234,10 @@
 <script>
 	function copyImage(e) {
 		e.preventDefault();
-		//console.log(e.target.childNodes[3].childNodes[9].childNodes[3].value);
-		var imgName = e.target.childNodes[3].childNodes[9].childNodes[3].value;
+//		console.log(e.target.childNodes[5].childNodes[9].childNodes[3].value);
+		var imgName = e.target.childNodes[5].childNodes[9].childNodes[3].value;
 			imgName = imgName.substring(imgName.lastIndexOf('\\') + 1);
-			$('#image').val(imgName);
+			$('#mImage').val(imgName);
 			document.frm.submit();
 		}
 </script>

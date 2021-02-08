@@ -40,8 +40,9 @@ public class FoodUpload extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding(CHARSET);
-		String ATTACHES_DIR = "c:\\attaches";
+//		String ATTACHES_DIR = "c:\\attaches";
 //		String ATTACHES_DIR = request.getContextPath() + "/img";
+		String ATTACHES_DIR = "/img";
 		System.out.println(ATTACHES_DIR);
 
 		PrintWriter out = response.getWriter();
