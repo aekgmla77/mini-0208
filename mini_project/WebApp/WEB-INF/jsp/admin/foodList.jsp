@@ -60,6 +60,7 @@
 		$('#mName2').val($(e.target).parent().parent().parent().children().eq(3).html());
 		$('#mPrice2').val($(e.target).parent().parent().parent().children().eq(4).html());
 		$('#mContent2').val($(e.target).parent().parent().parent().children().eq(5).html());
+//		$('#mImage2').val($(e.target).parent().parent().parent().children().eq(6).html());
 	}
 </script>
 </head>
@@ -169,7 +170,7 @@
 <div id="editEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form id="frr" name="frr" method="post" action="foodUpdate.do">
+			<form id="frr" name="frr"  method="post" action="foodUpdate.do">
 				<div class="modal-header">
 					<h4 class="modal-title">메뉴 수정</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -199,11 +200,10 @@
 						<label>Image</label>
 						<textarea class="form-control" id="mImage2" name="mImage2" required></textarea>
 						<input class="form-control" type="file" name="file">
-						<input type="hidden" name="mImage" id="mImage">
 					</div> -->
 				</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="취소">
+						<input type="reset" class="btn btn-default" data-dismiss="modal" value="취소">
 						<input type="submit" class="btn btn-info" value="저장">
 					</div>
 			</form>
@@ -238,6 +238,14 @@
 		var imgName = e.target.childNodes[5].childNodes[9].childNodes[3].value;
 			imgName = imgName.substring(imgName.lastIndexOf('\\') + 1);
 			$('#mImage').val(imgName);
+			document.frm.submit();
+		}
+	function updateImage(r) {
+		r.preventDefault();
+//		console.log(r.target.childNodes[3].childNodes[11].childNodes[3].value);
+		var imgName = r.target.childNodes[3].childNodes[11].childNodes[3].value;
+			imgName = imgName.substring(imgName.lastIndexOf('\\') + 1);
+			$('#mImage2').val(imgName);
 			document.frm.submit();
 		}
 </script>

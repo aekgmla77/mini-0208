@@ -105,8 +105,8 @@ public class FoodDAO extends DAO {
 			psmt.setString(2, vo.getmName());
 			psmt.setString(3, vo.getmPrice());
 			psmt.setString(4, vo.getmContent());
-			psmt.setInt(5, vo.getmNumber());
 //			psmt.setString(5, vo.getmImage());
+			psmt.setInt(5, vo.getmNumber());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

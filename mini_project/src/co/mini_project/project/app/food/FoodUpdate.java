@@ -18,10 +18,10 @@ public class FoodUpdate implements Command {
 		vo.setmName(request.getParameter("mName2"));
 		vo.setmPrice(request.getParameter("mPrice2"));
 		vo.setmContent(request.getParameter("mContent2"));
-		vo.setmNumber(Integer.parseInt(request.getParameter("mNumber2")));
 //		vo.setmImage(request.getParameter("mImage2"));
+		vo.setmNumber(Integer.parseInt(request.getParameter("mNumber2")));
 		
-		dao.update(vo);
+		int n = dao.update(vo);
 		
 		return "foodList.do";
 	}
